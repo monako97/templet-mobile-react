@@ -1,0 +1,46 @@
+@import (reference) url('@/styles/var.less');
+
+.navs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 16px);
+    height: @footer-height;
+    margin: 8px 8px calc(8px + @area-padding-bottom);
+    padding: 8px;
+    color: @text-color;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: initial;
+    text-align: center;
+    background-color: @footer-bg;
+    border-radius: @border-radius-base;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+    button {
+        flex: 1;
+        margin-left: 8px;
+        border: none;
+        border-radius: @border-radius-base;
+        cursor: pointer;
+        span {
+            font-size: 16px;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:hover,&.active {
+            color: #fff;
+            background-color: #6495ed;
+        }
+        i {
+            display: block;
+            font-size: 10px;
+            opacity: 60%;
+        }
+    }
+}

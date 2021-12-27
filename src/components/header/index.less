@@ -1,0 +1,21 @@
+@import (reference) url('@/styles/var.less');
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: @header-height;
+    padding-top: @area-padding-top;
+    color: @text-color;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    background-color: @header-bg;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+}
