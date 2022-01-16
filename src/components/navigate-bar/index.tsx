@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { matchUtil, useLocation, useNavigate, useLocale } from 'plugin-runtime';
 import styles from './index.less';
-import type { RouterProps } from 'plugin-runtime';
 
 function createHash(hashLength = 24) {
   return Array.from(Array(Number(hashLength)), () =>
@@ -13,41 +12,37 @@ const btns = [
   {
     path: `dynamic/${createHash()}`,
     key: 'dynamic/:id',
-    title: '页面1'
+    title: '页面1',
   },
   {
     path: `dynamic/${createHash()}/${createHash()}`,
     key: 'dynamic/:id/:name',
-    title: '页面2'
+    title: '页面2',
   },
   {
     path: `home`,
     key: 'home',
-    title: '首页'
+    title: '首页',
   },
   {
     path: `home/dynamic/${createHash()}`,
     key: 'home/dynamic/:id',
-    title: '页面3'
+    title: '页面3',
   },
   {
     path: `home/dynamic/${createHash()}/${createHash()}`,
     key: 'home/dynamic/:id/:name',
-    title: '页面4'
-  }
+    title: '页面4',
+  },
 ];
 
 const NavigatorBar = () => {
   const navigate = useNavigate();
   const { getLanguage } = useLocale();
   const jumpText = getLanguage('jump');
-  const [match, setMatch] = useState<RouterProps>({ key: 'route-home' });
   const l = useLocation();
-
-  useEffect(() => {
-    const _match = matchUtil(l.pathname);
-
-    setMatch(_match);
+  const match = useMemo(() => {
+    return matchUtil(l.pathname);
   }, [l.pathname]);
 
   return (

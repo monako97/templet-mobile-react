@@ -9,19 +9,6 @@ declare module './index.less' {
   export default styles;
 }
 
-declare const providerConfig: {
-  prefixCls: string;
-  iconPrefixCls: string;
-  input: React.InputHTMLAttributes<HTMLInputElement>;
-  [key: string]: any;
-};
-
-declare const routeBaseName: string;
-
-declare const version: string;
-
-declare const projectName: string;
-
 interface Window {
   areaPaddingTop?: number;
   areaPaddingBottom?: number;

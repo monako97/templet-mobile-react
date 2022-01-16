@@ -4,7 +4,7 @@ import { useOutlet, useMatch } from 'plugin-runtime';
 const Test: React.FC<PureComponentProps> = ({ path }: PureComponentProps) => {
   const match = useMatch({
     path: path,
-    end: false
+    end: false,
   });
   const outlet = useOutlet();
 

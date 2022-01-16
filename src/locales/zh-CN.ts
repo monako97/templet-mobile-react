@@ -12,8 +12,8 @@ const zhCN: LocalesConfType = {
     'route-home/dynamic': '主页-子页面',
     'sub-page-view': '子路由页面',
     jump: '跳转',
-    'user-info': '用户信息'
-  }
+    'user-info': '用户信息',
+  },
 };
 
 export default zhCN;

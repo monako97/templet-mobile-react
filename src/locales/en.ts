@@ -11,8 +11,8 @@ const en: LocalesConfType = {
     'route-home/dynamic/:id/:name': 'Home Dynamic ID Name',
     'sub-page-view': 'Sub page view',
     jump: 'Jump',
-    'user-info': 'User information'
-  }
+    'user-info': 'User information',
+  },
 };
 
 export default en;

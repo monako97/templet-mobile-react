@@ -19,23 +19,23 @@ const routers = [
                 children: [
                   {
                     path: ':name',
-                    element: React.createElement(lazyImport('dynamic/$id/$name'))
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+                    element: React.createElement(lazyImport('dynamic/$id/$name')),
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         path: '*',
         element: React.createElement(Navigate, {
           to: '/home',
-          replace: true
-        })
-      }
-    ]
-  }
+          replace: true,
+        }),
+      },
+    ],
+  },
 ] as RouterProps[];
 
 export default routers;
