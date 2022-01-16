@@ -9,5 +9,13 @@
   },
   "license": "MIT",
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {},
+  "files": [
+    "config",
+    "mock",
+    "src",
+    "typings",
+    "LICENSE",
+    "tsconfig.json"
+  ]
 }
