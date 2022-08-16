@@ -1,6 +1,6 @@
 {
   "name": "plugin-mobile-template",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "H5应用模版",
   "main": "index.js",
   "scripts": {},
