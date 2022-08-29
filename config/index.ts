@@ -9,12 +9,12 @@ const conf: PartialConfigType = {
     antd: ['[source]/es/[name:-]', '[source]/es/[name:-]/style'],
     lodash: '[source]/[name]',
     '@ant-design/icons': {
-        transform: ({ name, source }) => {
-            if (name === 'createFromIconfontCN') {
-                return `${source}/es/components/IconFont`;
-            }
-            return `${source}/es/icons/${name}`;
-        },
+      transform: ({ name, source }) => {
+        if (name === 'createFromIconfontCN') {
+          return `${source}/es/components/IconFont`;
+        }
+        return `${source}/es/icons/${name}`;
+      },
     },
   },
   proxy: [
@@ -24,7 +24,7 @@ const conf: PartialConfigType = {
       changeOrigin: true,
       pathRewrite: { '^/api/': '/' },
       secure: false,
-    }
+    },
   ] as unknown as PartialConfigType['proxy'],
 };
 
