@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useMatch } from 'plugin-runtime';
+import { useMatch } from 'PackageNameByCore';
 
 const Test: React.FC<PureComponentProps> = ({ path }: PureComponentProps) => {
   const [a, setA] = useState(0);

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { matchUtil, useLocation, useNavigate, useLocale } from 'plugin-runtime';
+import { matchUtil, useLocation, useNavigate, useLocale } from 'PackageNameByCore';
 import styles from './index.less';
 
 function createHash(hashLength = 24) {

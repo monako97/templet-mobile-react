@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocale, useOutlet, useSelector, shallowEqual, useDispatch } from 'plugin-runtime';
+import { useLocale, useOutlet, useSelector, shallowEqual, useDispatch } from 'PackageNameByCore';
 import styles from './index.less';
 import type { UserModelType } from '@/models/user';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useOutlet } from 'plugin-runtime';
+import { useOutlet } from 'PackageNameByCore';
 import NavigatorBar from '@/components/navigate-bar';
 import Header from '@/components/header';
 import styles from './index.less';

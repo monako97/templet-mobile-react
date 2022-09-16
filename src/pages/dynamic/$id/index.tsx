@@ -1,5 +1,5 @@
 import React from 'react';
-import { useOutlet, useMatch } from 'plugin-runtime';
+import { useOutlet, useMatch } from 'PackageNameByCore';
 
 const Test: React.FC<PureComponentProps> = ({ path }: PureComponentProps) => {
   const match = useMatch({

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import styles from './index.less';
-import { matchUtil, useLocation, useLocale } from 'plugin-runtime';
+import { matchUtil, useLocation, useLocale } from 'PackageNameByCore';
 
 const Header = () => {
   const l = useLocation();

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { lazyImport, Navigate } from 'plugin-runtime';
-import type { RouterProps } from 'plugin-runtime';
+import { lazyImport, Navigate } from 'PackageNameByCore';
+import type { RouterProps } from 'PackageNameByCore';
 
 const routers = [
   {
