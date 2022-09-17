@@ -2,9 +2,6 @@ import type { PartialConfigType } from 'PackageNameByCore';
 
 const conf: PartialConfigType = {
   designSize: 375,
-  minifier: {
-    type: 'terser',
-  },
   importOnDemand: {
     antd: ['[source]/es/[name:-]', '[source]/es/[name:-]/style'],
     lodash: '[source]/[name]',
