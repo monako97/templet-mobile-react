@@ -1,5 +1,4 @@
 import { loginByUserName } from '@/services/user';
-import { isFunction } from 'lodash';
 import type { ModelType, ModelActionType, ModelEffectMap } from 'PackageNameByCore';
 import type { ResponseBody } from 'PackageNameByRequest';
 
@@ -30,31 +29,28 @@ const model: ModelType<UserModelType> = {
   namespace: 'account',
   state: {},
   effects: {
-    // 用户登录
-    *login(
+    // 用户名登录
+    *fetchLoginByUserName(
       { payload }: Partial<ModelActionType>,
       { call, put }: ModelEffectMap
     ): Generator<unknown, void, ResponseBody> {
-      const { type, data } = payload;
-      const api = type === 'email' ? loginByUserName : loginByUserName;
-      const resp: ResponseBody = yield call(() => api(data));
+      const resp: ResponseBody = yield call(() => loginByUserName(payload.data));
 
-      if (isFunction(payload.callback)) {
-        payload.callback(resp);
-      }
       yield put({
         type: 'account/saveUserInfo',
         payload: resp.result,
       });
     },
-    *logout(
-      _: Partial<ModelActionType>,
-      { put }: ModelEffectMap
+    // Email登录
+    *fetchLoginByEmail(
+      { payload }: Partial<ModelActionType>,
+      { call, put }: ModelEffectMap
     ): Generator<unknown, void, ResponseBody> {
-      sessionStorage.clear();
-      localStorage.clear();
+      const resp: ResponseBody = yield call(() => loginByUserName(payload.data));
+
       yield put({
-        type: 'account/reset',
+        type: 'account/saveUserInfo',
+        payload: resp.result,
       });
     },
   },
@@ -62,8 +58,8 @@ const model: ModelType<UserModelType> = {
     saveUserInfo(state: UserModelType, action: ModelActionType): UserModelType {
       return { ...state, info: action.payload };
     },
-    change(state: UserModelType, action: ModelActionType): UserModelType {
-      return { ...state, ...action.payload };
+    logout(): UserModelType {
+      return {};
     },
     reset(): UserModelType {
       return {};
