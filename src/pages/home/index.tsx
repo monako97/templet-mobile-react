@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { useLocale, useOutlet, useSelector, shallowEqual, useDispatch } from 'PackageNameByCore';
 import styles from './index.less';
-import type { UserModelType } from '@/models/user';
+import type { UserModelType } from '@/models/account';
 
 const Home: React.FC = () => {
   const outlet = useOutlet();
   const dispatch = useDispatch();
   const { getLanguage } = useLocale();
-  const userInfo = useSelector((state: { user: UserModelType }) => state.user, shallowEqual);
+  const userInfo = useSelector((state: { account: UserModelType }) => state.account, shallowEqual);
 
   useEffect(() => {
     dispatch({
-      type: 'user/fetchLoginByUserName',
+      type: 'account/fetchLoginByUserName',
       payload: {
         data: {
           username: 'admin',
