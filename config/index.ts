@@ -3,15 +3,12 @@ import type { PartialConfigType } from 'PackageNameByCore';
 const conf: PartialConfigType = {
   designSize: 375,
   importOnDemand: {
-    antd: ['[source]/es/[name:-]', '[source]/es/[name:-]/style'],
-    lodash: '[source]/[name]',
-    '@ant-design/icons': {
-      transform: ({ name, source }) => {
-        if (name === 'createFromIconfontCN') {
-          return `${source}/es/components/IconFont`;
-        }
-        return `${source}/es/icons/${name}`;
-      },
+    'neko-ui': {
+      transform: 'neko-ui/es/${member}',
+      memberTransformers: ['dashed_case'],
+    },
+    lodash: {
+      transform: 'lodash/${member}',
     },
   },
   proxy: [

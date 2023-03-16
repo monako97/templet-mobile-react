@@ -1,7 +1,7 @@
-import type { LocalesConfType } from 'PackageNameByCore';
+import type { LocaleConfig } from 'PackageNameByCore';
 
-const zhCN: LocalesConfType = {
-  namespace: 'zh_CN',
+const zhCN: LocaleConfig = {
+  language: 'zh_CN',
   title: '简体中文',
   translation: {
     'route-home': '主页',

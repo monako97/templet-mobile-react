@@ -1,0 +1,16 @@
+:root {
+    --border-radius: 4px;
+    --area-padding-top: 0px;
+    --area-padding-bottom: 0px;
+    --header-height: calc(50px + var(--area-padding-top));
+    --footer-height: calc(50px + var(--area-padding-bottom));
+    --main-padding-top: calc(var(--header-height) + var(--area-padding-top));
+    --main-padding-bottom: calc(var(--footer-height) + var(--area-padding-bottom));
+}
+
+pre {
+    overflow: auto;
+    border-radius: var(--border-radius);
+    color: #fff;
+    background: burlywood;
+}

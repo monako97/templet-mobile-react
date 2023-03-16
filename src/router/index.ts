@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { lazyImport, Navigate } from 'PackageNameByCore';
-import type { RouterProps } from 'PackageNameByCore';
+import { lazy } from 'react';
+import { Navigate, type RouterProps } from 'PackageNameByCore';
 
-const routers = [
+const routers: Partial<RouterProps>[] = [
   {
     path: '*',
     root: true,
@@ -11,31 +10,25 @@ const routers = [
         path: 'home',
         children: [
           {
-            path: 'dynamic',
-            children: [
-              {
-                path: ':id',
-                element: React.createElement(lazyImport('dynamic/$id')),
-                children: [
-                  {
-                    path: ':name',
-                    element: React.createElement(lazyImport('dynamic/$id/$name')),
-                  },
-                ],
-              },
-            ],
+            path: 'dynamic/:id',
+            element: lazy(() => import('@/pages/dynamic/$id')),
+          },
+          {
+            path: 'dynamic/:id/:name',
+            element: lazy(() => import('@/pages/dynamic/$id/$name')),
           },
         ],
       },
       {
         path: '*',
-        element: React.createElement(Navigate, {
-          to: '/home',
+        element: Navigate,
+        props: {
+          to: 'home',
           replace: true,
-        }),
+        },
       },
-    ],
+    ] as RouterProps[],
   },
-] as RouterProps[];
+];
 
 export default routers;

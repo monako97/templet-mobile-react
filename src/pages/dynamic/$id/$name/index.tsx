@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { type FC, useState } from 'react';
 import { useMatch } from 'PackageNameByCore';
 
-const Test: React.FC<PureComponentProps> = ({ path }: PureComponentProps) => {
+const Test: FC<{ path: string }> = ({ path }) => {
   const [a, setA] = useState(0);
   const match = useMatch(path);
 

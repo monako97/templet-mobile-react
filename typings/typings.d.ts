@@ -8,14 +8,7 @@ declare module './index.less' {
 
   export default styles;
 }
-declare module 'moment' {
-  import { Dayjs } from 'dayjs';
-  namespace moment {
-    type Moment = Dayjs;
-  }
-  export = moment;
-  export as namespace moment;
-}
+
 interface Window {
   areaPaddingTop?: number;
   areaPaddingBottom?: number;
@@ -23,9 +16,4 @@ interface Window {
     render(children: React.ReactChild | Iterable<React.ReactNode>): void;
     unmount(): void;
   };
-}
-
-interface PureComponentProps {
-  path: string;
-  selfUrl: string;
 }

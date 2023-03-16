@@ -1,7 +1,7 @@
-import type { LocalesConfType } from 'PackageNameByCore';
+import type { LocaleConfig } from 'PackageNameByCore';
 
-const en: LocalesConfType = {
-  namespace: 'en_US',
+const en: LocaleConfig = {
+  language: 'en_US',
   title: '英文',
   translation: {
     'route-home': 'Home',

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { type FC } from 'react';
 import { useOutlet, useMatch } from 'PackageNameByCore';
 
-const Test: React.FC<PureComponentProps> = ({ path }: PureComponentProps) => {
+const Test: FC<{ path: string }> = ({ path }) => {
   const match = useMatch({
     path: path,
     end: false,

@@ -1,32 +1,25 @@
-import React, { useEffect } from 'react';
-import { useLocale, useOutlet, useSelector, shallowEqual, useDispatch } from 'PackageNameByCore';
-import styles from './index.less';
-import type { UserModelType } from '@/models/account';
+import React, { type FC, useEffect } from 'react';
+import { localizable, useOutlet } from 'PackageNameByCore';
+import { account } from '@/store';
 
-const Home: React.FC = () => {
+const Home: FC = () => {
+  const { info } = account;
   const outlet = useOutlet();
-  const dispatch = useDispatch();
-  const { getLanguage } = useLocale();
-  const userInfo = useSelector((state: { account: UserModelType }) => state.account, shallowEqual);
+  const { t } = localizable;
 
   useEffect(() => {
-    dispatch({
-      type: 'account/fetchLoginByUserName',
-      payload: {
-        data: {
-          username: 'admin',
-          password: 'adminpsw',
-        },
-      },
+    account.loginUsername({
+      username: 'admin',
+      password: '123456a',
     });
-  }, [dispatch]);
+  }, []);
   return (
-    <React.Fragment>
-      <div className={styles.details}>
+    <>
+      <div>
         <details>
-          <summary>{getLanguage('user-info')}</summary>
+          <summary>{t['user-info']}</summary>
           <pre>
-            <code>{JSON.stringify(userInfo, null, 4)}</code>
+            <code>{JSON.stringify(info, null, 4)}</code>
           </pre>
         </details>
         <details>
@@ -39,11 +32,11 @@ const Home: React.FC = () => {
 
       {outlet && (
         <div>
-          {getLanguage('sub-page-view')}
+          {t['sub-page-view']}
           {outlet}
         </div>
       )}
-    </React.Fragment>
+    </>
   );
 };
 
