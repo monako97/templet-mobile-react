@@ -9,7 +9,9 @@
   },
   "license": "MIT",
   "devDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "fastclick": "1.0.6"
+  },
   "files": [
     "config",
     "mock",
