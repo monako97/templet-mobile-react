@@ -1,6 +1,6 @@
-import React, { type FC, useEffect } from 'react';
-import { localizable, useOutlet } from 'PackageNameByCore';
-import { account } from '@/store';
+import React, { type FC, useEffect } from "react";
+import { localizable, useOutlet } from "PackageNameByCore";
+import { loginUsername } from "@/store";
 
 const Home: FC = () => {
   const { info } = account;
@@ -8,16 +8,16 @@ const Home: FC = () => {
   const { t } = localizable;
 
   useEffect(() => {
-    account.loginUsername({
-      username: 'admin',
-      password: '123456a',
+    loginUsername({
+      username: "admin",
+      password: "123456a",
     });
   }, []);
   return (
     <>
       <div>
         <details>
-          <summary>{t['user-info']}</summary>
+          <summary>{t["user-info"]}</summary>
           <pre>
             <code>{JSON.stringify(info, null, 4)}</code>
           </pre>
@@ -32,7 +32,7 @@ const Home: FC = () => {
 
       {outlet && (
         <div>
-          {t['sub-page-view']}
+          {t["sub-page-view"]}
           {outlet}
         </div>
       )}

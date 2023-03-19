@@ -1,2 +1,2 @@
-export { account, type UserInfo } from './account';
-export { global } from './global';
+export * from './account';
+export * from './global';
