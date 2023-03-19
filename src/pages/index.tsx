@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { useOutlet, localizable } from 'PackageNameByCore';
+import { useOutlet, localizable, setLanguage } from 'PackageNameByCore';
 import Header from '@/components/header';
 import NavigatorBar from '@/components/navigate-bar';
 import './global.css';
@@ -18,7 +18,7 @@ const view = css`
 `;
 const App = () => {
   const outlet = useOutlet();
-  const { locales, set, language } = localizable;
+  const { locales, language } = localizable;
 
   return (
     <div className={body}>
@@ -30,7 +30,7 @@ const App = () => {
               type="radio"
               name="lang"
               value={item.language}
-              onClick={() => set(item.language)}
+              onClick={() => setLanguage(item.language)}
               checked={item.language === language}
             />
             {item.title}:<span>{item.language}</span>
