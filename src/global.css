@@ -8,6 +8,13 @@
     --main-padding-bottom: calc(var(--footer-height) + var(--area-padding-bottom));
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+    inline-size: 100vi;
+    block-size: 100vb;
+}
+
 pre {
     overflow: auto;
     border-radius: var(--border-radius);

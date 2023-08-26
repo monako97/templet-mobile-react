@@ -1,7 +1,7 @@
 {
-  "name": "template-mobile",
-  "version": "1.2.6",
-  "description": "H5应用模版",
+  "name": "templet-mobile-react",
+  "version": "0.0.1",
+  "description": "H5 mobile应用模版",
   "main": "index.js",
   "scripts": {},
   "author": {
@@ -10,14 +10,13 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "fastclick": "1.0.6"
+    "fastclick": "1.0.6",
+    "shared-store-object": "^1.0.8"
   },
   "files": [
     "config",
-    "mock",
     "src",
     "typings",
-    "LICENSE",
     "tsconfig.json"
   ],
   "resolutions": {

@@ -1,28 +1,15 @@
-import React, { type FC, useEffect } from "react";
-import { localizable, useOutlet } from "PackageNameByCore";
-import { loginUsername } from "@/store";
+import React, { type FC } from 'react';
+import locales from '@app/locales';
+import { useOutlet } from 'react-router-dom';
 
 const Home: FC = () => {
-  const { info } = account;
+  const { t } = locales;
   const outlet = useOutlet();
-  const { t } = localizable;
 
-  useEffect(() => {
-    loginUsername({
-      username: "admin",
-      password: "123456a",
-    });
-  }, []);
   return (
     <>
       <div>
-        <details>
-          <summary>{t["user-info"]}</summary>
-          <pre>
-            <code>{JSON.stringify(info, null, 4)}</code>
-          </pre>
-        </details>
-        <details>
+        <details open>
           <summary>Location</summary>
           <pre>
             <code>{JSON.stringify(window.location, null, 4)}</code>
@@ -32,7 +19,7 @@ const Home: FC = () => {
 
       {outlet && (
         <div>
-          {t["sub-page-view"]}
+          {t['sub-page-view']}
           {outlet}
         </div>
       )}

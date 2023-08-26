@@ -1,14 +1,9 @@
-import type { PartialConfigType } from 'PackageNameByCore';
+import type { ConfigType } from 'PackageNameByCore';
 
-const conf: PartialConfigType = {
-  designSize: 375,
+const conf: Partial<ConfigType> = {
   importOnDemand: {
     '@moneko/common': {
       transform: 'lib/${member}',
-    },
-    'neko-ui': {
-      transform: 'es/${member}',
-      memberTransformers: ['dashed_case'],
     },
     lodash: {
       transform: '${member}',
@@ -22,7 +17,7 @@ const conf: PartialConfigType = {
       pathRewrite: { '^/api/': '/' },
       secure: false,
     },
-  ] as unknown as PartialConfigType['proxy'],
+  ],
 };
 
 export default conf;

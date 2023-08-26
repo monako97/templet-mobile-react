@@ -1,10 +1,11 @@
 import { lazy } from 'react';
-import { Navigate, type RouterProps } from 'PackageNameByCore';
+import { type RouteConfig } from '@app/routes';
 
-const routers: Partial<RouterProps>[] = [
+const routers: RouteConfig[] = [
   {
-    path: '*',
+    path: '/',
     root: true,
+    element: lazy(() => import('@/layout')),
     children: [
       {
         path: 'home',
@@ -19,15 +20,7 @@ const routers: Partial<RouterProps>[] = [
           },
         ],
       },
-      {
-        path: '*',
-        element: Navigate,
-        props: {
-          to: 'home',
-          replace: true,
-        },
-      },
-    ] as RouterProps[],
+    ],
   },
 ];
 

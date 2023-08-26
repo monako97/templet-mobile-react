@@ -1,14 +1,19 @@
-import React, { type FC, useState } from 'react';
-import { useMatch } from 'PackageNameByCore';
+import React, { useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
+import sso from 'shared-store-object';
+import { matchUtil } from '@/components/navigate-bar';
 
-const Test: FC<{ path: string }> = ({ path }) => {
-  const [a, setA] = useState(0);
-  const match = useMatch(path);
+const btn = sso({
+  count: 0,
+});
+const Test = () => {
+  const l = useLocation();
+  const match = useMemo(() => matchUtil(l.pathname), [l.pathname]);
 
   return (
-    <div onClick={() => setA(a + 1)}>
+    <div onClick={() => btn.count++}>
       <h4>子路由的子页面</h4>
-      click: {a}
+      click: {btn.count}
       <pre>
         <code>{JSON.stringify(match, null, 4)}</code>
       </pre>

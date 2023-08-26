@@ -1,19 +1,17 @@
-import React, { type FC } from 'react';
-import { useOutlet, useMatch } from 'PackageNameByCore';
+import React, { useMemo } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import { matchUtil } from '@/components/navigate-bar';
 
-const Test: FC<{ path: string }> = ({ path }) => {
-  const match = useMatch({
-    path: path,
-    end: false,
-  });
-  const outlet = useOutlet();
+const Test = () => {
+  const l = useLocation();
+  const match = useMemo(() => matchUtil(l.pathname), [l.pathname]);
 
   return (
     <div>
       <pre>
         <code>{JSON.stringify(match, null, 4)}</code>
       </pre>
-      {outlet}
+      <Outlet />
     </div>
   );
 };

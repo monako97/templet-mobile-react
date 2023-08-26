@@ -1,17 +1,16 @@
-import type { LocaleConfig } from 'PackageNameByCore';
+import type { LocaleConfig } from '@app/locales';
 
 const en: LocaleConfig = {
   language: 'en_US',
   title: '英文',
   translation: {
-    'route-home': 'Home',
-    'route-dynamic/:id': 'Dynamic ID',
-    'route-dynamic/:id/:name': 'Dynamic ID Name',
-    'route-home/dynamic/:id': 'Home Dynamic ID',
-    'route-home/dynamic/:id/:name': 'Home Dynamic ID Name',
+    home: 'Home',
+    'dynamic/:id': 'Dynamic ID',
+    'dynamic/:id/:name': 'Dynamic ID Name',
+    'home/dynamic/:id': 'Home Dynamic ID',
+    'home/dynamic/:id/:name': 'Home Dynamic ID Name',
     'sub-page-view': 'Sub page view',
     jump: 'Jump',
-    'user-info': 'User information',
   },
 };
 
