@@ -8,6 +8,10 @@ const routers: RouteConfig[] = [
     element: lazy(() => import('@/layout')),
     children: [
       {
+        path: '/',
+        component: lazy(() => import('@/pages')),
+      },
+      {
         path: 'home',
         children: [
           {
