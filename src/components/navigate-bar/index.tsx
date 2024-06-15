@@ -1,8 +1,7 @@
-import React from 'react';
-import localizable from '@app/locales';
-import { Link } from '@moneko/react';
-import { useLocation } from 'react-router-dom';
 import * as styles from './index.less';
+import * as React from 'react';
+import localizable from '@app/locales';
+import { Link, useLocation } from '@moneko/react';
 
 function createHash() {
   return Math.random().toString(36).substring(2);

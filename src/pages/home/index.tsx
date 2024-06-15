@@ -1,8 +1,8 @@
-import React, { type FC } from 'react';
+import * as React from 'react';
 import locales from '@app/locales';
-import { useOutlet } from 'react-router-dom';
+import { useOutlet } from '@moneko/react';
 
-const Home: FC = () => {
+const Home: React.FC = () => {
   const { t } = locales;
   const outlet = useOutlet();
 

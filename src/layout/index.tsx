@@ -1,7 +1,7 @@
-import React from 'react';
-import localizable, { locales, setLang } from '@app/locales';
-import { useOutlet } from 'react-router-dom';
 import * as styles from './index.less';
+import * as React from 'react';
+import localizable, { locales, setLang } from '@app/locales';
+import { useOutlet } from '@moneko/react';
 import Header from '@/components/header';
 import NavigatorBar from '@/components/navigate-bar';
 

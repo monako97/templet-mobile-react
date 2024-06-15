@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import * as React from 'react';
+import { Outlet, useLocation } from '@moneko/react';
 import { matchUtil } from '@/components/navigate-bar';
 
 const Test = () => {
   const l = useLocation();
-  const match = useMemo(() => matchUtil(l.pathname), [l.pathname]);
+  const match = React.useMemo(() => matchUtil(l.pathname), [l.pathname]);
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { type RouteConfig } from '@app/routes';
+import type { RouteConfig } from '@app/routes';
 
 const routers: RouteConfig[] = [
   {
@@ -9,7 +9,7 @@ const routers: RouteConfig[] = [
     children: [
       {
         path: '/',
-        component: lazy(() => import('@/pages')),
+        element: lazy(() => import('@/pages')),
       },
       {
         path: 'home',

@@ -1,7 +1,7 @@
-import React, { type FC } from 'react';
+import * as React from 'react';
 
-const Root: FC = () => {
-  return <>Root Page</>;
+const Root: React.FC = () => {
+  return <div>Root Page</div>;
 };
 
 export default Root;

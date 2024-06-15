@@ -1,7 +1,7 @@
-import React, { type FC } from 'react';
-import { Outlet } from 'react-router-dom';
+import * as React from 'react';
+import { Outlet } from '@moneko/react';
 
-const Home: FC = () => {
+const Home: React.FC = () => {
   return <Outlet />;
 };
 
