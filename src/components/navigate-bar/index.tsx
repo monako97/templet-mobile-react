@@ -56,6 +56,7 @@ export function matchUtil(pathname: string): MatchPath {
             p = rs[i];
             return;
           }
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
           /* empty */
         }
