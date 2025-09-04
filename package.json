@@ -1,6 +1,6 @@
 {
   "name": "templet-mobile-react",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "H5 mobile应用模版",
   "main": "index.js",
   "scripts": {},
@@ -11,7 +11,7 @@
   "devDependencies": {},
   "dependencies": {
     "fastclick": "1.0.6",
-    "shared-store-object": "1.2.4"
+    "shared-store-object": "1.2.8"
   },
   "files": [
     "config",
