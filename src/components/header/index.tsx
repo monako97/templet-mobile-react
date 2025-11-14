@@ -1,6 +1,6 @@
 import * as styles from './index.less';
 import * as React from 'react';
-import localizable from '@app/locales';
+import localizable from 'app:locales';
 import { useLocation } from '@moneko/react';
 import { matchUtil } from '../navigate-bar';
 
